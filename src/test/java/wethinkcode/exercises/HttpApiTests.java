@@ -8,7 +8,6 @@ import kong.unirest.json.JSONArray;
 import kong.unirest.json.JSONObject;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import wethinkcode.httpapi.Task;
 import wethinkcode.httpapi.TasksAppServer;
@@ -60,7 +59,6 @@ public class HttpApiTests {
      * Remember to remove the @Disabled annotation
      */
     @Test
-    @Disabled("Incomplete")
     public void getOneTask() {
         HttpResponse<JsonNode> response = Unirest.get("http://localhost:5000/task/1").asJson();
         assertEquals(HttpStatus.OK, response.getStatus());
@@ -76,7 +74,6 @@ public class HttpApiTests {
      * Remember to remove the @Disabled annotation
      */
     @Test
-    @Disabled("Incomplete")
     public void taskNotFound() {
         HttpResponse<JsonNode> response = Unirest.get("http://localhost:5000/task/0").asJson();
         assertEquals(HttpStatus.NOT_FOUND, response.getStatus());
@@ -87,7 +84,6 @@ public class HttpApiTests {
      * Remember to remove the @Disabled annotation
      */
     @Test
-    @Disabled("Incomplete")
     void addTask() {
         HttpResponse<JsonNode> response = Unirest.post("http://localhost:5000/task")
                 .header("Content-Type", "application/json")
@@ -105,7 +101,6 @@ public class HttpApiTests {
      * Remember to remove the @Disabled annotation
      */
     @Test
-    @Disabled("Incomplete")
     void duplicateTask() {
         HttpResponse<JsonNode> response = Unirest.post("http://localhost:5000/task")
                 .header("Content-Type", "application/json")

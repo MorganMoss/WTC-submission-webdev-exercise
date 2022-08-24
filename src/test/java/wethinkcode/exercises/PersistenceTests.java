@@ -2,7 +2,6 @@ package wethinkcode.exercises;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import wethinkcode.persistence.*;
 import wethinkcode.rdbms.BooksTableValidator;
@@ -61,7 +60,6 @@ public class PersistenceTests {
      * Test for Exercise 3.1 (part 1)
      */
     @Test
-    @Disabled
     public void badCreate() {
         DummyTables tables = new DummyTables(manager.getConnection());
         assertFalse(tables.badCreate());
@@ -71,7 +69,6 @@ public class PersistenceTests {
      * Test for Exercise 3.1 (part 2)
      */
     @Test
-    @Disabled
     public void createGenres() throws SQLException {
         Tables tables = new Tables(manager.getConnection());
         assertTrue(tables.createGenres());
@@ -82,7 +79,6 @@ public class PersistenceTests {
      * Test for Exercise 3.1 (part 3)
      */
     @Test
-    @Disabled
     public void createBooks() throws SQLException {
         Tables tables = new Tables(manager.getConnection());
         assertTrue(tables.createBooks());
@@ -93,7 +89,6 @@ public class PersistenceTests {
      * Test for Exercise 3.2  (part 1)
      */
     @Test
-    @Disabled
     public void insertGenres() {
         Tables tables = new Tables(manager.getConnection());
         DataLoader loader = new DataLoader(manager.getConnection());
@@ -105,7 +100,6 @@ public class PersistenceTests {
      * Test for Exercise 3.2  (part 2)
      */
     @Test
-    @Disabled
     public void insertBooks() throws SQLException {
         Tables tables = new Tables(manager.getConnection());
         DataLoader loader = new DataLoader(manager.getConnection());
@@ -120,7 +114,6 @@ public class PersistenceTests {
      * @throws SQLException SQL error
      */
     @Test
-    @Disabled
     public void findAllGenres() throws SQLException {
         Finder finder = new Finder(manager.getConnection());
         Tables tables = new Tables(manager.getConnection());
@@ -139,7 +132,6 @@ public class PersistenceTests {
      * @throws SQLException SQL error
      */
     @Test
-    @Disabled
     public void findGenresLike() throws SQLException {
         Finder finder = new Finder(manager.getConnection());
         Tables tables = new Tables(manager.getConnection());
@@ -159,7 +151,6 @@ public class PersistenceTests {
      * @throws SQLException SQL error
      */
     @Test
-    @Disabled
     public void findBooksAndGenres() throws SQLException {
         Finder finder = new Finder(manager.getConnection());
         Tables tables = new Tables(manager.getConnection());
@@ -177,7 +168,6 @@ public class PersistenceTests {
      * @throws SQLException SQL error
      */
     @Test
-    @Disabled
     public void findNumberOfBooksInGenre() throws SQLException {
         Finder finder = new Finder(manager.getConnection());
         Tables tables = new Tables(manager.getConnection());
